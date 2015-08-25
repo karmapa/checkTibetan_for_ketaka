@@ -1,4 +1,4 @@
-# checkTibetan_ver2
+# checkTibetan_ver1.0
 Only show coordinate and syllable length for tagging
 
 Input content ,and output will show array of coordinates like : [ 401, 3, 'ཤཱམ' ].
