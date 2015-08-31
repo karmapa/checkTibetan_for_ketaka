@@ -1,7 +1,7 @@
 var fs=require("fs");
-var content=fs.readFileSync("./d1_001.xml","utf8");
 var letters=JSON.parse(fs.readFileSync("possible_root_letters_sort.json","utf8"));
 var out=[];
+var content;
 
 var indexOfSorted = function (array, obj) { 
     var low = 0,
@@ -27,17 +27,16 @@ var findCoordinates=function(item){
   }
 }
 
-var checkSyllables= function(fn){
+exports.checkSyllables= function(fn){
   var wrongsyllables=[];
+  content=fn;
   fn.replace(/[\u0f20-\u0fbf]+/g,function(m){
      var index = indexOfSorted(letters,m);
       if(index==-1&&!(m.substr(m.length-2)=="འི"||m.substr(m.length-2)=="འོ")){
         if(wrongsyllables.indexOf(m)==-1) wrongsyllables.push(m);
       }
     });
-  return wrongsyllables;
+  wrongsyllables.map(findCoordinates);
+  return dosort(out);
 }
 
-var arr=checkSyllables(content);
-arr.map(findCoordinates);
-console.log(dosort(out));
