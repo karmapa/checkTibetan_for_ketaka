@@ -1,0 +1,19 @@
+{
+  "name": "check-tibetan",
+  "version": "1.0.1",
+  "description": "Only show coordinate and syllable length for tagging",
+  "main": "checkTibetan.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karmapa/checkTibetan_for_ketaka.git"
+  },
+  "author": "rickie120243",
+  "license": "Copyright",
+  "bugs": {
+    "url": "https://github.com/karmapa/checkTibetan_for_ketaka/issues"
+  },
+  "homepage": "https://github.com/karmapa/checkTibetan_for_ketaka"
+}

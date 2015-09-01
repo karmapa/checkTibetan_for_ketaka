@@ -1,5 +1,4 @@
-var fs=require("fs");
-var letters=JSON.parse(fs.readFileSync("possible_root_letters_sort.json","utf8"));
+var letters = require("./possible-root-letters-sort");
 var out=[];
 var content;
 
