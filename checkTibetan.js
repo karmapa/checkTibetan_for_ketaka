@@ -1,4 +1,3 @@
-var fs=require("fs");
 var letters = require("./possible-root-letters-sort");
 var out=[];
 var content;
