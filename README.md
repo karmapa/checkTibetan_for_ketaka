@@ -9,14 +9,16 @@ It means the wrong syllable starts at position 401 ,syllable length is 3 ,and th
 ## Usage
 
 ```javascript
-//main.js
-var fs=require("fs");
-var content=fs.readFileSync("./d1_001.xml","utf8");
-var checkTibetan=require("./checkTibetan.js");
+// main.js
+var fs = require("fs");
+var content = fs.readFileSync("./d1_001.xml", "utf8");
+var checkSyllables = require("check-tibetan").checkSyllables;
 
-var out=checkTibetan.checkSyllables(content);
-/*out will be:
-[ [ 0, 4, 'སསསས' ],
+var out = checkSyllables(content);
+
+/* out will be:
+[
+  [ 0, 4, 'སསསས' ],
   [ 404, 3, 'ཤཱམ' ],
   [ 568, 2, 'ཀཽ' ],
   [ 571, 3, 'ཤཱམ' ],
@@ -26,6 +28,7 @@ var out=checkTibetan.checkSyllables(content);
   [ 1234, 2, 'ཀཽ' ],
   [ 1237, 3, 'ཤཱམ' ],
   [ 1241, 3, 'བཱི' ],
-  [ 1332, 3, 'ཤཱམ' ] ]
+  [ 1332, 3, 'ཤཱམ' ]
+]
 */
 ```
