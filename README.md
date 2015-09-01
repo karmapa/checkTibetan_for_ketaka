@@ -6,6 +6,8 @@ Input content ,and output will show array of coordinates like : [ 401, 3, 'ཤ�
 
 It means the wrong syllable starts at position 401 ,syllable length is 3 ,and the syllable is 'ཤཱམ'
 
+Data is imported from [tibetan-spellchecker](https://github.com/tibetan-nlp/tibetan-spellchecker/).
+
 ## Usage
 
 ```javascript
