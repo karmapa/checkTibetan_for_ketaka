@@ -1,8 +1,7 @@
 var letters = require("./possible-root-letters-sort");
-var out=[];
 var content;
 
-var indexOfSorted = function (array, obj) { 
+var indexOfSorted = function (array, obj) {
     var low = 0,
     high = array.length-1;
     while (low < high) {
@@ -20,13 +19,16 @@ var dosort=function(arr){
 }
 
 var findCoordinates=function(item){
+  var coords = [];
   var location=0,x=new RegExp(item,"g");
   while(result=x.exec(content)){
-    out.push([result.index,item.length,item]);
+    coords.push([result.index,item.length,item]);
   }
+  return coords;
 }
 
 exports.checkSyllables= function(fn){
+  var coords = [];
   var wrongsyllables=[];
   content=fn;
   fn.replace(/[\u0f20-\u0fbf]+/g,function(m){
@@ -35,7 +37,9 @@ exports.checkSyllables= function(fn){
         if(wrongsyllables.indexOf(m)==-1) wrongsyllables.push(m);
       }
     });
-  wrongsyllables.map(findCoordinates);
-  return dosort(out);
+  wrongsyllables.forEach(function(item) {
+    coords = coords.concat(findCoordinates(item));
+  });
+  return dosort(coords);
 }
 
