@@ -1,10 +1,12 @@
-# checkTibetan_1.0.1
+# checkTibetan_1.0.2
 
 Only show coordinate and syllable length for tagging
 
 Input content ,and output will show array of coordinates like : [ 401, 3, 'ཤཱམ' ].
 
 It means the wrong syllable starts at position 401 ,syllable length is 3 ,and the syllable is 'ཤཱམ'
+
+Data is imported from [tibetan-spellchecker](https://github.com/tibetan-nlp/tibetan-spellchecker/).
 
 ## Usage
 
