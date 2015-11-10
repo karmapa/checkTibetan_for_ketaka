@@ -19,17 +19,13 @@ var dosort=function(arr){
 }
 
 exports.checkSyllables = function(fn){
-  var coords = [],w=0;
+  var coords = [];
   content=fn;
-  console.time('c')
   fn.replace(/[\u0f2a-\u0fbf]+/g,function(m,idx){
     var index = indexOfSorted(letters,m);
       if(index==-1&&!(m.substr(m.length-2)=="འི"||m.substr(m.length-2)=="འོ")){
         coords.push([idx,m.length,m]);
-        w++;
       }
     });
-  console.log(w);
-  console.timeEnd('c');
   return dosort(coords);
 }
