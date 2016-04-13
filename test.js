@@ -7,43 +7,40 @@ var assert = require('assert');
 describe('check by possible letters', function () {
   it('possible check', function () {
     var out = checkTibetan.checkSyllables(content, 0);
-    console.log(content);
     var arr = [ 
       [ 33, 8, 'ཪྼཱཿཪྼླཱ' ],
-      [ 89, 5, 'ཀྲྀརྞ' ],
-      [ 95, 3, 'པཅི' ],
-      [ 107, 3, 'ཙཱབ' ],
-      [ 115, 5, 'ྈྐཿནི' ],
-      [ 229, 8, 'པའིཉམངོན' ],
-      [ 248, 3, 'ྉྤཱུ' ],
-      [ 252, 11, 'ཥྚྲཱིཿཧྲཱིཿ' ] 
+      [ 87, 5, 'ཀྲྀརྞ' ],
+      [ 93, 3, 'པཅི' ],
+      [ 105, 3, 'ཙཱབ' ],
+      [ 113, 5, 'ྈྐཿནི' ],
+      [ 224, 8, 'པའིཉམངོན' ],
+      [ 243, 3, 'ྉྤཱུ' ],
+      [ 247, 11, 'ཥྚྲཱིཿཧྲཱིཿ' ] 
     ];
     assert.deepEqual(out, arr);
   });
   it('correctly check', function () {
     var out = checkTibetan.checkSyllables(content, 1);
-    console.log(content);
     var arr = [ 
-      [ 44, 4, '༠༠༠༩' ],
-      [ 89, 5, 'ཀྲྀརྞ' ],
-      [ 95, 3, 'པཅི' ],
-      [ 107, 3, 'ཙཱབ' ],
-      [ 229, 8, 'པའིཉམངོན' ] 
+      [ 43, 4, '༠༠༠༩' ],
+      [ 87, 5, 'ཀྲྀརྞ' ],
+      [ 93, 3, 'པཅི' ],
+      [ 105, 3, 'ཙཱབ' ],
+      [ 224, 8, 'པའིཉམངོན' ] 
     ];
     assert.deepEqual(out, arr);
   });
   it('index = undefined', function () {
     var out = checkTibetan.checkSyllables(content);
-    console.log(content);
     var arr = [ 
       [ 33, 8, 'ཪྼཱཿཪྼླཱ' ],
-      [ 89, 5, 'ཀྲྀརྞ' ],
-      [ 95, 3, 'པཅི' ],
-      [ 107, 3, 'ཙཱབ' ],
-      [ 115, 5, 'ྈྐཿནི' ],
-      [ 229, 8, 'པའིཉམངོན' ],
-      [ 248, 3, 'ྉྤཱུ' ],
-      [ 252, 11, 'ཥྚྲཱིཿཧྲཱིཿ' ] 
+      [ 87, 5, 'ཀྲྀརྞ' ],
+      [ 93, 3, 'པཅི' ],
+      [ 105, 3, 'ཙཱབ' ],
+      [ 113, 5, 'ྈྐཿནི' ],
+      [ 224, 8, 'པའིཉམངོན' ],
+      [ 243, 3, 'ྉྤཱུ' ],
+      [ 247, 11, 'ཥྚྲཱིཿཧྲཱིཿ' ] 
     ];
     assert.deepEqual(out, arr);
   });
