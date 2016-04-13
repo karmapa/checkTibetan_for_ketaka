@@ -1,2 +1,5 @@
 *.xml
-LICENSE
+main.js
+.travis.yml
+spellchecktest.txt
+test.js

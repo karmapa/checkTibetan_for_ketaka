@@ -11,7 +11,7 @@
     "url": "https://github.com/karmapa/checkTibetan_for_ketaka.git"
   },
   "author": "rickie120243",
-  "license": "Copyright",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "2.4.5"
   },
