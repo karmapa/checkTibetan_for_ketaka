@@ -4,7 +4,7 @@
   "description": "Only show coordinate and syllable length for tagging",
   "main": "checkTibetan.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,9 @@
   },
   "author": "rickie120243",
   "license": "Copyright",
+  "devDependencies": {
+    "mocha": "2.4.5"
+  },
   "bugs": {
     "url": "https://github.com/karmapa/checkTibetan_for_ketaka/issues"
   },

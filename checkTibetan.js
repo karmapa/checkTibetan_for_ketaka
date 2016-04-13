@@ -1,4 +1,6 @@
-var letters = require("./possible-root-letters-sort");
+var possibleLetters = require("./possible-root-letters-sort");
+var correctlyLetters = require("./correctly-root-letters-sort")
+var letters;
 var content;
 
 var indexOfSorted = function (array, obj) {
@@ -18,8 +20,15 @@ var dosort=function(arr){
   });
 }
 
-exports.checkSyllables = function(fn){
+exports.checkSyllables = function(fn, index){
   var coords = [];
+  if(0 === index || undefined === index) {
+    letters = possibleLetters;
+  } else if (1 === index) {
+    letters = correctlyLetters;
+  } else {
+    return coords;
+  }
   content=fn;
   fn.replace(/[\u0f2a-\u0fbf]+/g,function(m,idx){
     var index = indexOfSorted(letters,m);
