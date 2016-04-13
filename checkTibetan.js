@@ -32,9 +32,10 @@ exports.checkSyllables = function(fn, index){
   content=fn;
   fn.replace(/[\u0f2a-\u0fbf]+/g,function(m,idx){
     var index = indexOfSorted(letters,m);
-      if(index==-1&&!(m.substr(m.length-2)=="འི"||m.substr(m.length-2)=="འོ")){
-        coords.push([idx,m.length,m]);
-      }
-    });
+
+    if(index==-1&&!(m.substr(m.length-2)=="འི"||m.substr(m.length-2)=="འོ")){
+      coords.push([idx,m.length,m]);
+    }
+  });
   return dosort(coords);
 }
