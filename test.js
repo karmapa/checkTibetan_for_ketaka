@@ -7,6 +7,7 @@ var assert = require('assert');
 describe('check by possible letters', function () {
   it('possible check', function () {
     var out = checkTibetan.checkSyllables(content, 0);
+    console.log(content);
     var arr = [ 
       [ 33, 8, 'ཪྼཱཿཪྼླཱ' ],
       [ 89, 5, 'ཀྲྀརྞ' ],
@@ -21,6 +22,7 @@ describe('check by possible letters', function () {
   });
   it('correctly check', function () {
     var out = checkTibetan.checkSyllables(content, 1);
+    console.log(content);
     var arr = [ 
       [ 44, 4, '༠༠༠༩' ],
       [ 89, 5, 'ཀྲྀརྞ' ],
@@ -32,6 +34,7 @@ describe('check by possible letters', function () {
   });
   it('index = undefined', function () {
     var out = checkTibetan.checkSyllables(content);
+    console.log(content);
     var arr = [ 
       [ 33, 8, 'ཪྼཱཿཪྼླཱ' ],
       [ 89, 5, 'ཀྲྀརྞ' ],
