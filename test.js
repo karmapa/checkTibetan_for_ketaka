@@ -1,6 +1,6 @@
 var fs = require('fs');
 var checkTibetan = require('./checkTibetan');
-var content = fs.readFileSync('./spellchecktest.txt','utf8');
+var content = fs.readFileSync('./spellchecktest.xml', 'utf8');
 var assert = require('assert');
 
 
