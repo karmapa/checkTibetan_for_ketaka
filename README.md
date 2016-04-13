@@ -18,31 +18,9 @@ var fs = require("fs");
 var content = fs.readFileSync("./spellchecktest.xml", "utf8");
 var checkSyllables = require("check-tibetan").checkSyllables;
 
-var out = checkSyllables(content, index); 
-```
-
-
-index = 0 or undefined for possible letters check
-```
-var out = checkSyllables(content, 0);  //var out = checkSyllables(content);
+var out = checkSyllables(content); 
 /*out
-[ [ 33, 8, 'ཪྼཱཿཪྼླཱ' ],
-  [ 87, 5, 'ཀྲྀརྞ' ],
-  [ 93, 3, 'པཅི' ],
-  [ 105, 3, 'ཙཱབ' ],
-  [ 113, 5, 'ྈྐཿནི' ],
-  [ 224, 8, 'པའིཉམངོན' ],
-  [ 243, 3, 'ྉྤཱུ' ],
-  [ 247, 11, 'ཥྚྲཱིཿཧྲཱིཿ' ] ]
-*/
-```
-
-index = 1 for correctly letters check
-```
-var out = checkSyllables(content, 1); 
-/*out
-[ [ 43, 4, '༠༠༠༩' ],
-  [ 87, 5, 'ཀྲྀརྞ' ],
+[ [ 87, 5, 'ཀྲྀརྞ' ],
   [ 93, 3, 'པཅི' ],
   [ 105, 3, 'ཙཱབ' ],
   [ 224, 8, 'པའིཉམངོན' ] ]
