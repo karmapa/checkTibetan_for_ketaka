@@ -8,36 +8,26 @@ var checkTibetan = require("./checkTibetan.js");
 
 var checkResults = glob.sync(globPatt)
   .sort(naturalSort)
-  .map(checkTibetanSpell);
-
-function checkTibetanSpell(route) {
-  var text = fs.readFileSync(route, "utf8");
-  var pbs = makePbs(text);
-
-  var results = pbs.map(function(pb) {
-    var wrongSpells = checkTibetan.checkSyllables(pb.text);
-    if (wrongSpells.length > 0) {
-      return {pbId: pb.pbId, wrongSpells: wrongSpells};
-    }
-  })
+  .map(checkTibetanSpell)
   .filter(function(obj) {
     return obj !== undefined;
   });
 
-  return {file: route, pbs: results};
-}
+function checkTibetanSpell(route) {
+  var text = fs.readFileSync(route, "utf8");
+  var wrongSpells = checkTibetan.checkSyllables(pb.text);
 
-function makePbs(text) {
-  var delim = "~!@#";
-  var pbTexts = text.replace(/(<pb.+?>)/g, delim + "$1")
-    .split(delim);
+  if (wrongSpells.length > 0) {
+    var unRepeatResults = {};
 
-  pbTexts.splice(0, 2, pbTexts[0] + "\n" + pbTexts[1]);
-
-  return pbTexts.map(function(pbText) {
-      var pbId = /<pb id="(.+?)"\/>/.exec(pbText)[1];
-      return {pbId: pbId, text: text};
+    wrongSpells.forEach(function(spell) {
+      if (! unRepeatResults[spell]) {
+        unRepeatResults[spell] = true;
+      }
     });
+
+    return {file: route, wrongSpells: Object.keys(unRepeatResults)};
+  }
 }
 
 fs.writeFileSync("./wrongSpells.txt", JSON.stringify(checkResults, null, '  '), 'utf8');
