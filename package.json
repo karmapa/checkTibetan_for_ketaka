@@ -4,7 +4,7 @@
   "description": "Only show coordinate and syllable length for tagging",
   "main": "checkTibetan.js",
   "scripts": {
-    "test": "exit 0"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
