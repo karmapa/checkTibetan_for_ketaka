@@ -28,8 +28,10 @@ function checkTibetanSpell(route) {
 }
 
 function makePbs(text) {
+  var delim = "~!@#";
   var pbTexts = text.replace(/(<pb)/g, delim + "$1")
-    .split(delim)
+    .split(delim);
+
   return pbTexts.splice(0, 2, pbTexts[0] + "\n" + pbTexts[1])
     .map(function(text) {
       var pbId = /<pb id="(.+?)">/.exec(text)[1];

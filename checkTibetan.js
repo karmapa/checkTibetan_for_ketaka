@@ -1,5 +1,4 @@
 var correctlyLetters = require('./correctly-root-letters-sort');
-var delim = "~!@#"
 
 var indexOfSorted = function (array, syl) {
     var low = 0,
