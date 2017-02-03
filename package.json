@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/karmapa/checkTibetan_for_ketaka/issues"
   },
-  "homepage": "https://github.com/karmapa/checkTibetan_for_ketaka"
+  "homepage": "https://github.com/karmapa/checkTibetan_for_ketaka",
+  "dependencies": {
+    "glob": "7.1.1",
+    "javascript-natural-sort": "0.7.1"
+  }
 }
