@@ -2,3 +2,4 @@ node_modules
 *.xml
 *.txt
 .DS_Store
+kdbs
