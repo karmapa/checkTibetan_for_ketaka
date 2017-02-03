@@ -40,4 +40,4 @@ function makePbs(text) {
     });
 }
 
-fs.writeFileSync("./wrongSpells.txt", JSON.Stringify(checkResults, null, '  '), 'utf8');
+fs.writeFileSync("./wrongSpells.txt", JSON.stringify(checkResults, null, '  '), 'utf8');
