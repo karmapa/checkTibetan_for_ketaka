@@ -1,5 +1,4 @@
 var correctlyLetters = require('./correctly-root-letters-sort');
-var content;
 
 var indexOfSorted = function (array, syl) {
     var low = 0,
@@ -18,10 +17,10 @@ var dosort=function(arr) {
   });
 }
 
-exports.checkSyllables = function(fn, index){
+exports.checkSyllables = function(text, index){
   var coords = [];
-  content = fn;
-  fn.replace(/[\u0f00-\u0f0a\u0f12-\u0f1f\u0f34-\u0fff]+/g, function(m, idx){
+
+  text.replace(/[\u0f00-\u0f0a\u0f12-\u0f1f\u0f34-\u0fff]+/g, function(m, idx){
     var index = indexOfSorted(correctlyLetters, m);
     if('ཥྚྲཱིཿཧྲཱིཿ' === m) console.log(index);
     if(index == -1 && !(m.substr(m.length-2) == 'འི' || m.substr(m.length-2) == 'འོ')){
