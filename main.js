@@ -15,7 +15,7 @@ var checkResults = glob.sync(globPatt)
 
 function checkTibetanSpell(route) {
   var text = fs.readFileSync(route, "utf8");
-  var wrongSpells = checkTibetan.checkSyllables(pb.text);
+  var wrongSpells = checkTibetan.checkSyllables(text);
 
   if (wrongSpells.length > 0) {
     var unRepeatResults = {};
