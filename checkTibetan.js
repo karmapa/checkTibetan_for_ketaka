@@ -18,19 +18,9 @@ var dosort=function(arr) {
   });
 }
 
-function makePbs(text) {
-  var pbTexts = text.replace(/(<pb)/g, delim + "$1")
-    .split(delim)
-  return pbTexts.splice(0, 2, pbTexts[0] + "\n" + pbTexts[1])
-    .map(function(text) {
-      var pbId = /<pb id="(.+?)">/.exec(text)[1];
-      return {pbId: pbId, text: text};
-    });
-}
-
 exports.checkSyllables = function(text, index){
   var coords = [];
-  var pbs = makePbs(text);
+
   text.replace(/[\u0f00-\u0f0a\u0f12-\u0f1f\u0f34-\u0fff]+/g, function(m, idx){
     var index = indexOfSorted(correctlyLetters, m);
     if('ཥྚྲཱིཿཧྲཱིཿ' === m) console.log(index);
