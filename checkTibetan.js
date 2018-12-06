@@ -21,7 +21,7 @@ var dosort=function(arr) {
 exports.checkSyllables = function(fn, index){
   var coords = [];
   content = fn;
-  fn.replace(/[\u0f00-\u0f0a\u0f12-\u0f1f\u0f34-\u0fff]+/g, function(m, idx){
+  fn.replace(/[\u0f00-\u0f03\u0f40-\u0fbc]+/g, function(m, idx){
     var index = indexOfSorted(correctlyLetters, m);
     if('ཥྚྲཱིཿཧྲཱིཿ' === m) console.log(index);
     if(index == -1 && !(m.substr(m.length-2) == 'འི' || m.substr(m.length-2) == 'འོ')){
